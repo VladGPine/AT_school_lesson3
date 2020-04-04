@@ -12,12 +12,6 @@ import java.util.Map;
 public class Tests extends WebDriverSettings {
 
     @Test
-    public void marketTest() {
-        MarketMainPage market = new MarketMainPage(driver);
-        System.out.println(market.getCategories());
-    }
-
-    @Test
     public void testWithSteps() {
         MarketMainPage market = new MarketMainPage(driver);
         List<Map<String, Object>> categories = market.getCategories();
