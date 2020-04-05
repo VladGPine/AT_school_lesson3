@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import test.ui.WebDriverSettings;
 import test.ui.pageObject.MarketElectronicsPage;
 import test.ui.pageObject.MarketMainPage;
+import test.ui.pageObject.MarketPhonesPage;
 
 import java.util.List;
 import java.util.Map;
@@ -24,5 +25,11 @@ public class Tests extends WebDriverSettings {
 
         Steps.checkElectronicsCategory(electronicsCategories,"Мобильные телефоны");
         Steps.goToPhonesPage(electronics,"Мобильные телефоны");
+
+        MarketPhonesPage phones = new MarketPhonesPage(driver);
+
+        Steps.checkingAppleFilter(phones.getAppleFilter(), "Apple");
+        Steps.activateAppleFilter(phones);
+        Steps.checkingProductsAt1to10Pages(phones, "APPLE");
     }
 }
