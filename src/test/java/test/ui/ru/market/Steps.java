@@ -48,8 +48,9 @@ public class Steps {
     @Step("Показываем все страницы с телефонами {brandName} с 1 по 10, если есть")
     public static void checkingProductsAt1to10Pages(MarketPhonesPage phones,
                                                     String brandName) {
-//        phones.showAllPhones();
+        phones.showAllPhones();
         List<Map<String, Object>> products = phones.getProductsListMap();
+//        System.out.println(products.size());
 //        for (Map<String, Object> map : products) {
 //            for (Map.Entry<String, Object> entry : map.entrySet()) {
 //                String key = entry.getKey();

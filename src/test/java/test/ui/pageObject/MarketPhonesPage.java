@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.NoSuchElementException;
 
 public class MarketPhonesPage {
     protected WebDriver driver;
@@ -55,20 +56,26 @@ public class MarketPhonesPage {
         }
     }
 
-    // Не совсем понимаю в чем ошибка...
-    // Пробовал и через цикл делать, тоже самое, тест валится (
+    public Boolean isElementPresented() {
+        Boolean elementCondition = false;
+        try {
+            elementCondition = driver.findElement(By.xpath(showMoreButtonSelector)).isDisplayed();
+        } catch (NoSuchElementException e) {
+            return elementCondition;
+        }
+        return elementCondition;
+    }
+
     // Хотелось бы разобрать как обрабатывать момент, когда кнопка "показать еще" больше не отображается.
 
-//    public void showAllPhones() {
-//        int i = 1;
-//
-//        while (i < 10) {
-//            if (driver.findElements(By.xpath(showMoreButtonSelector)).size() > 0) {
-//                showMoreButton = driver.findElement(By.xpath(showMoreButtonSelector));
-//                showMoreButton.click();
-//                wait(5000);
-//            }
-//            i++;
-//        }
-//    }
+    public void showAllPhones() {
+        for (int i = 1; i < 10; i++) {
+            if (isElementPresented()) {
+                showMoreButton = driver.findElement(By.xpath(showMoreButtonSelector));
+                showMoreButton.click();
+                wait(5000);
+            }
+//            System.out.println(i);
+        }
+    }
 }
