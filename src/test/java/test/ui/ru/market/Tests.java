@@ -17,18 +17,18 @@ public class Tests extends WebDriverSettings {
         MarketMainPage market = new MarketMainPage(driver);
         List<Map<String, Object>> categories = market.getCategories();
 
-        Steps.checkCategory(categories, "Электроника");
+        Steps.checkCategory(driver, categories, "Электроника");
         Steps.goToElectronicsPage(market,"Электроника");
 
         MarketElectronicsPage electronics = new MarketElectronicsPage(driver);
         List<WebElement> electronicsCategories = electronics.getElectronicsCategoriesList();
 
-        Steps.checkElectronicsCategory(electronicsCategories,"Мобильные телефоны");
+        Steps.checkElectronicsCategory(driver, electronicsCategories,"Мобильные телефоны");
         Steps.goToPhonesPage(electronics,"Мобильные телефоны");
 
         MarketPhonesPage phones = new MarketPhonesPage(driver);
 
-        Steps.checkingAppleFilter(phones.getAppleFilter(), "Apple");
+        Steps.checkingAppleFilter(driver, phones.getAppleFilter(), "Apple");
         Steps.activateAppleFilter(phones);
         Steps.checkingProductsAt1to10Pages(phones, "APPLE");
     }

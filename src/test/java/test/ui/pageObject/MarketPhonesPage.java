@@ -48,6 +48,10 @@ public class MarketPhonesPage {
         return productsListMap;
     }
 
+    public WebDriver getDriver() {
+        return driver;
+    }
+
     private void wait(int s){
         try {
             Thread.sleep(s);
