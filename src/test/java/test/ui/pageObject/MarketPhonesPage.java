@@ -70,8 +70,6 @@ public class MarketPhonesPage {
         return elementCondition;
     }
 
-    // Хотелось бы разобрать как обрабатывать момент, когда кнопка "показать еще" больше не отображается.
-
     public void showAllPhones() {
         for (int i = 1; i < 10; i++) {
             if (isElementPresented()) {

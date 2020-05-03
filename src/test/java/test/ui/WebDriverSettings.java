@@ -13,11 +13,9 @@ public class WebDriverSettings {
 
     @BeforeEach
     private void startTest() {
-        System.setProperty("webdriver.chrome.driver", System.getenv("CHROME_DRIVER"));
+        System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
         ChromeOptions options = new ChromeOptions();
-//        options.addArguments("--window-size=1920, 1200");
-//        options.setCapability("Site key", "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI");
-//        options.setCapability("Secret key","6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe");
+
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);

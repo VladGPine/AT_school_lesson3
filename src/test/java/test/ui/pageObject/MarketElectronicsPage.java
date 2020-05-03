@@ -11,10 +11,7 @@ public class MarketElectronicsPage {
     protected WebDriver driver;
 
     String electronicsCategorySelector = "//*[@data-autotest-id='subItems']//*[@data-zone-name='link']//a[@href]";
-//    String urlSelector = ".//a[@href]";
-
     List<WebElement> electronicsCategoriesList = new ArrayList<>();
-//    List<Map<String, Object>> electronicsCategories = new ArrayList<>();
 
     public MarketElectronicsPage(WebDriver driver) {
         this.driver = driver;
@@ -24,17 +21,6 @@ public class MarketElectronicsPage {
         electronicsCategoriesList = driver.findElements(By.xpath(electronicsCategorySelector));
         return electronicsCategoriesList;
     }
-
-//    public List<Map<String, Object>> getElectronicsCategories() {
-//        for (WebElement cat: electronicsCategoriesList) {
-//            electronicsCategories.add(Map.of(
-//               "WEB_ELEMENT", cat,
-//               "URL", cat.findElement(By.xpath(urlSelector)).getAttribute("href"),
-//               "TEXT", cat.findElement(By.xpath(urlSelector)).getText()
-//            ));
-//        }
-//        return electronicsCategories;
-//    }
 
     public void goToPhonesPage(String electronicsCategory) {
         WebElement categoryLink = (WebElement) electronicsCategoriesList.stream()

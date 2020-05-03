@@ -54,14 +54,7 @@ public class Steps {
                                                     String brandName) {
         phones.showAllPhones();
         List<Map<String, Object>> products = phones.getProductsListMap();
-//        System.out.println(products.size());
-//        for (Map<String, Object> map : products) {
-//            for (Map.Entry<String, Object> entry : map.entrySet()) {
-//                String key = entry.getKey();
-//                Object value = entry.getValue();
-//                System.out.println(key + ": " + value);
-//            }
-//        }
+
         Assert.assertTrue(products.stream()
                 .allMatch(phone -> phone.get("BRAND_NAME").toString().equals(brandName)));
 

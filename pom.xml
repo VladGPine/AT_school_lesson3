@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.example</groupId>
-    <artifactId>lesson3</artifactId>
+    <artifactId>yandex_market_phone_tests</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <dependencies>
@@ -93,6 +93,7 @@
                         <version>${aspectj.version}</version>
                     </dependency>
 
+
                 </dependencies>
             </plugin>
 
@@ -106,8 +107,6 @@
                     <reportDirectory>${basedir}/target/allure-reports</reportDirectory>
                 </configuration>
             </plugin>
-
-
         </plugins>
     </build>
 
